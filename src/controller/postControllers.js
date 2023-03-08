@@ -1,3 +1,5 @@
+import { getPostsRepository } from "../repositories/postRepository.js";
+
 export async function registerPost(req, res){
     try {
         
@@ -8,9 +10,9 @@ export async function registerPost(req, res){
 
 export async function getPosts(req, res){
     try {
-        
+        res.send(getPostsRepository.rows);
     } catch (error) {
-        
+        res.send(error.message)
     }
 }
 
